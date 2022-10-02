@@ -17,7 +17,7 @@
     "skipLibCheck": true,
     "paths": {
       "#/*": ["src/*"],
-      "~/*": ["tests/*"]
+      "!tests/*": ["tests/*"]
     }
   },
   "exclude": [

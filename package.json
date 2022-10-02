@@ -14,9 +14,12 @@
   },
   "homepage": "https://github.com/mpnproject/discord-bot-server#readme",
   "scripts": {
+    "start:test": "nodemon -L dist/src/index.js",
     "start:dev": "nodemon -L src/index.ts",
     "start": "node dist/index.js",
     "build": "tsc -p .",
+    "compile": "tsc",
+    "compile:dev": "tsc --watch --preserveWatchOutput",
     "heroku-postbuild": "tsc -p .",
     "docs": "node --expose-gc ./node_modules/.bin/apidoc",
     "lint": "eslint --ext .ts .",
