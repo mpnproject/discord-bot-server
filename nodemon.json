@@ -1,0 +1,7 @@
+{
+  "delay": 2500,
+  "verbose": true,
+  "ignore": [],
+  "exec": "ts-node ./src/index.ts",
+  "ext": "ts,tsx,js,json"
+}
