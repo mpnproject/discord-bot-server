@@ -1,0 +1,20 @@
+version: '3.7'
+
+x-app: &x-app
+  image: mpn-discord-bot
+  restart: always
+  build:
+    dockerfile: docker/Dockerfile
+    context: .
+  container_name: mpn-discord-bot-container
+
+services:
+  app:
+    <<: *x-app
+    expose:
+      - '3001'
+    ports:
+      - '3001:3001'
+    volumes:
+      - .:/home/node/monster-api-app
+    env_file: .env

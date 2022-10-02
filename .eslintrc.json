@@ -1,0 +1,35 @@
+{
+    "env": {
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "standard",
+        "plugin:eslint-comments/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "@typescript-eslint/no-type-alias": ["error", {
+          "allowGenerics": "always",
+          "allowAliases": "always",
+          "allowCallbacks": "always",
+          "allowConditionalTypes": "always",
+          "allowConstructors": "always",
+          "allowLiterals": "never",
+          "allowMappedTypes": "always",
+          "allowTupleTypes": "always"
+        }],
+        "quotes": "off",
+        "semi": [2, "always"],
+        "comma-dangle": [2, "only-multiline"],
+        "space-before-function-paren": ["error", "never"],
+        "max-len": ["error", {"code": 120}],
+        "eslint-comments/no-unused-disable": "error"
+    }
+}
