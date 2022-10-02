@@ -11,7 +11,7 @@ export function getEnvOrDefault(envName: string, defaultValue: string): string {
 }
 
 export const LOAD_MODULES = getEnvOrDefault("LOAD_MODULES", [
-  "discord",
+  "bbbb",
 ].join(","));
 
 export const CORS_ALLOWED_ORIGINS = getEnvOrDefault("CORS_ALLOWED_ORIGINS", "*");

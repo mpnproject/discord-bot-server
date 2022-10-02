@@ -6,7 +6,6 @@ x-app: &x-app
   build:
     dockerfile: docker/Dockerfile
     context: .
-  container_name: mpn-discord-bot-container
 
 services:
   app:
@@ -16,5 +15,10 @@ services:
     ports:
       - '3001:3001'
     volumes:
-      - .:/home/node/monster-api-app
+      - .:/home/app/mpn-discord-bot
     env_file: .env
+
+  compile:
+    <<: *x-app
+    command: yarn compile:dev
+    working_dir: $PWD

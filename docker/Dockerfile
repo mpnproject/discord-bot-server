@@ -1,14 +1,11 @@
 FROM node:16 as base
 
-WORKDIR /home/node/mpn-discord-bot
+WORKDIR /home/app/mpn-discord-bot
 
-COPY package*.json ./
-COPY tsconfig*.json ./
-COPY nodemon.json ./
-COPY .eslintrc.json ./
+RUN yarn add nodemon -g
 
+COPY . ./
 COPY ../src ./src
-COPY .env ./
 
 RUN yarn
 
