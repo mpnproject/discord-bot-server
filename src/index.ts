@@ -1,13 +1,13 @@
 /* istanbul ignore file */
 
-// require("#/load-modules").load("v2");
-
-import { server } from "#/server";
 require("reflect-metadata");
 require("module-alias").addAlias("#", __dirname);
+require("#/load-modules").load();
+// eslint-disable-next-line import/first
+import { server } from "#/server";
 
-const port = process.env.PORT ?? "3002";
+const port = process.env.PORT ?? "3001";
 
 server.listen(port, () => {
-  console.info(`V2 server running on port ${port}`);
+  console.info(`Server running on port ${port}!`);
 });

@@ -23,6 +23,6 @@ useExpressServer(server, {
   defaultErrorHandler: false,
 });
 
-server.get("/", (req, res) => res.status(StatusCodes.OK).send());
+server.get("/", (req, res) => res.status(StatusCodes.OK).send("aaa"));
 
 export { server };
