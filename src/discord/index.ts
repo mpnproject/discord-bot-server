@@ -1,1 +1,1 @@
-import "#/discord/di-container";
+import "#/discord/bot";
