@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "./dist",
-    "target": "ES2019",
-    "lib": ["ES2019"],
+    "rootDir": "./src",
+    "outDir": "./build",
+    "target": "ES2021",
+    "lib": ["ES2021"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
@@ -21,7 +22,11 @@
     }
   },
   "exclude": [
+    "build",
     "dist",
     "node_modules"
+  ],
+  "include": [
+    "src"
   ]
 }

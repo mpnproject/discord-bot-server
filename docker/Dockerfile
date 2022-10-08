@@ -17,4 +17,4 @@ CMD ["yarn", "build"]
 FROM base as dev
 ENV NODE_ENV=development
 
-CMD ["yarn", "start:dev"]
+CMD ["yarn", "dev"]

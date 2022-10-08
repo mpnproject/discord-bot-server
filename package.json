@@ -14,11 +14,10 @@
   },
   "homepage": "https://github.com/mpnproject/discord-bot-server#readme",
   "scripts": {
-    "start:test": "nodemon -L dist/src/index.js",
-    "start:dev": "nodemon -L src/index.ts",
-    "start": "node dist/index.js",
-    "build": "tsc -p .",
-    "compile": "tsc",
+    "start:dev": "concurrently \"tsc -w\" \"nodemon -L build/src/index.js\"",
+    "dev": "nodemon -L src/index.ts",
+    "start": "node build/index.js",
+    "compile": "tsc -p .",
     "compile:dev": "tsc --watch --preserveWatchOutput",
     "heroku-postbuild": "tsc -p .",
     "docs": "node --expose-gc ./node_modules/.bin/apidoc",
@@ -26,7 +25,8 @@
     "commit-lint": "npx --no -- commitlint --edit ${1}",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:ci": "yarn test -- --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy:commands": "tsc && node build/discord/deploy-commands.js"
   },
   "standard": {
     "env": [
@@ -82,6 +82,8 @@
     "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
     "cors": "^2.8.5",
+    "discord.js": "^14.5.0",
+    "discordx": "^11.4.0",
     "express": "^4.18.1",
     "helmet": "^6.0.0",
     "http-status-codes": "^2.2.0",
