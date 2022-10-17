@@ -1,12 +1,12 @@
 {
   "name": "discord-bot-server",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "main": "src/index.ts",
   "repository": "git@github.com:mpnproject/discord-bot-server.git",
   "author": "Gabriel Anatrone <anatrone.gabriel@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=16.0",
+    "node": ">=16.17",
     "yarn": ">=1.22.19"
   },
   "bugs": {
@@ -26,7 +26,7 @@
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:ci": "yarn test -- --coverage",
     "prepare": "husky install",
-    "deploy:commands": "tsc && node build/discord/deploy-commands.js"
+    "deploy:commands": "tsc && tsc-alias && node -r tsconfig-paths/register dist/discord/deploy-commands.js"
   },
   "standard": {
     "env": [
@@ -74,6 +74,8 @@
     "nodemon": "^2.0.20",
     "supertest": "^6.2.4",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.7.0",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "^4.8.4"
   },
   "dependencies": {
@@ -97,6 +99,7 @@
     "pg": "^8.8.0",
     "reflect-metadata": "^0.1.13",
     "routing-controllers": "^0.9.0",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "validator": "^13.7.0"
   }
 }
