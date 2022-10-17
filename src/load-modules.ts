@@ -13,7 +13,7 @@ export function load(applicationName = "DEFAULT", modules: string | string[] = L
   console.log(`Loading modules for ${applicationName}`, modules);
 
   for (const module of modules) {
-    console.log(module);
+    console.log("Module line 16: " + module);
     require(`#/${module}`);
   }
 }

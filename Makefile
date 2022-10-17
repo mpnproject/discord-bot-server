@@ -4,11 +4,14 @@ install:
 up:
 	docker-compose up -d app
 
-compile:
-	docker-compose up -d compile
-
 down:
 	docker-compose down
+
+dc:
+	yarn deploy:commands
+
+compile:
+	docker-compose up -d compile
 
 up-prod:
 	docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
