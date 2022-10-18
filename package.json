@@ -16,7 +16,7 @@
   "scripts": {
     "start:dev": "concurrently \"tsc -w\" \"nodemon -L build/src/index.js\"",
     "dev": "nodemon -L src/index.ts",
-    "start": "node build/index.js",
+    "start": "node -r tsconfig-paths/register dist/index.js",
     "compile": "tsc -p .",
     "compile:dev": "tsc --watch --preserveWatchOutput",
     "heroku-postbuild": "tsc -p .",
