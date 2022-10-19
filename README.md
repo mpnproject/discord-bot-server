@@ -17,7 +17,8 @@ Current version: **0.1.1**
 ### Steps
 
 1. Clone this repository
-2. Run `make install` for install the docker container
-3. Run `make up` for up the container and server
+2. Create the `.env` file with the values.
+3. Run `make install` for install the docker container
+4. Run `make up` for up the container and server
 
 In cases for running in Windows or the make command not working, you can see all commands in `package.json` or `Makefile` file
